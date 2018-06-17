@@ -1,0 +1,168 @@
+  File "parse_page.py", line 46
+    print time.time(), '  msg:', status.get('msg').encode('utf-8'), ' code:':status.get('code')
+                                                                            ^
+SyntaxError: invalid syntax
+  File "parse_page.py", line 46
+    print time.time(), '  msg:', status.get('msg').encode('utf-8'), ' code:':status.get('code')
+                                                                            ^
+SyntaxError: invalid syntax
+1529071241.62   msg: succ mc[5s]  code: 0
+1529071251.58   msg: succ mc[5s]  code: 0
+1529071281.82   msg: succ mc[5s]  code: 0
+1529071291.79   msg: succ mc[5s]  code: 0
+1529071301.96   msg: succ mc[5s]  code: 0
+1529071311.82   msg: succ db  code: 0
+1529071322.07   msg: succ db  code: 0
+1529071332.1   msg: succ db  code: 0
+1529071342.04   msg: succ db  code: 0
+1529071352.02   msg: succ mc[5s]  code: 0
+1529071362.03   msg: succ db  code: 0
+1529071372.08   msg: succ mc[5s]  code: 0
+1529071381.39   msg: succ mc[5s]  code: 0
+1529071391.35   msg: succ db  code: 0
+1529071401.3   msg: succ mc[5s]  code: 0
+1529071411.34   msg: succ mc[5s]  code: 0
+1529071421.31   msg: succ mc[5s]  code: 0
+1529071431.34   msg: succ db  code: 0
+1529071441.62   msg: succ mc[5s]  code: 0
+1529071451.56   msg: succ mc[5s]  code: 0
+1529071461.57   msg: succ db  code: 0
+1529071471.59   msg: succ db  code: 0
+1529071481.54   msg: succ db  code: 0
+1529071491.6   msg: succ db  code: 0
+1529071502.71   msg: succ mc[5s]  code: 0
+1529071511.83   msg: succ mc[5s]  code: 0
+1529071521.86   msg: succ mc[5s]  code: 0
+1529071531.81   msg: succ mc[5s]  code: 0
+1529071541.88   msg: succ db  code: 0
+1529071551.88   msg: succ db  code: 0
+1529071562.16   msg: succ mc[5s]  code: 0
+1529071572.15   msg: succ db  code: 0
+1529071582.08   msg: succ db  code: 0
+1529071592.07   msg: succ mc[5s]  code: 0
+1529071602.18   msg: succ mc[5s]  code: 0
+1529071612.07   msg: succ mc[5s]  code: 0
+1529071621.32   msg: succ mc[5s]  code: 0
+1529071631.37   msg: succ mc[5s]  code: 0
+1529071641.33   msg: succ mc[5s]  code: 0
+1529071651.28   msg: succ mc[5s]  code: 0
+1529071661.31   msg: succ mc[5s]  code: 0
+1529071671.35   msg: succ mc[5s]  code: 0
+1529071681.56   msg: succ mc[5s]  code: 0
+1529071691.66   msg: succ mc[5s]  code: 0
+1529071701.62   msg: succ db  code: 0
+1529071711.58   msg: succ mc[5s]  code: 0
+1529071721.56   msg: succ mc[5s]  code: 0
+1529071731.65   msg: succ mc[5s]  code: 0
+1529071741.84   msg: succ db  code: 0
+1529071751.89   msg: succ db  code: 0
+1529071761.89   msg: succ mc[5s]  code: 0
+1529071771.87   msg: succ mc[5s]  code: 0
+1529071781.87   msg: succ mc[5s]  code: 0
+1529071791.85   msg: succ db  code: 0
+1529071802.11   msg: succ mc[5s]  code: 0
+1529071812.08   msg: succ mc[5s]  code: 0
+1529071822.12   msg: succ mc[5s]  code: 0
+1529071832.14   msg: succ db  code: 0
+1529071842.05   msg: succ db  code: 0
+1529071852.06   msg: succ mc[5s]  code: 0
+1529071861.28   msg: succ mc[5s]  code: 0
+1529071871.29   msg: succ mc[5s]  code: 0
+1529071881.33   msg: succ db  code: 0
+1529071891.3   msg: succ db  code: 0
+1529071901.29   msg: succ mc[5s]  code: 0
+1529071911.3   msg: succ mc[5s]  code: 0
+1529071921.57   msg: succ db  code: 0
+1529071931.52   msg: succ db  code: 0
+1529071941.6   msg: succ db  code: 0
+1529071951.59   msg: succ db  code: 0
+1529071961.56   msg: succ db  code: 0
+1529071971.53   msg: succ mc[5s]  code: 0
+1529071981.77   msg: succ mc[5s]  code: 0
+1529071991.76   msg: succ mc[5s]  code: 0
+1529072001.78   msg: succ mc[5s]  code: 0
+1529072011.73   msg: succ db  code: 0
+Traceback (most recent call last):
+  File "parse_page.py", line 98, in <module>
+    pasted_info = loads_pasted_info(save_filename)
+  File "parse_page.py", line 64, in loads_pasted_info
+    with open(filename, 'r', encoding='utf-8') as f:
+IOError: [Errno 2] No such file or directory: 'data/update_content.txt'
+Traceback (most recent call last):
+  File "parse_page.py", line 98, in <module>
+    pasted_info = loads_pasted_info(save_filename)
+  File "parse_page.py", line 64, in loads_pasted_info
+    with open(filename, 'r', encoding='utf-8') as f:
+IOError: [Errno 2] No such file or directory: 'data/update_content.txt'
+Traceback (most recent call last):
+  File "parse_page.py", line 98, in <module>
+    pasted_info = loads_pasted_info(save_filename)
+  File "parse_page.py", line 64, in loads_pasted_info
+    with open(filename, 'r', encoding='utf-8') as f:
+IOError: [Errno 2] No such file or directory: 'data/update_content.txt'
+Traceback (most recent call last):
+  File "parse_page.py", line 98, in <module>
+    pasted_info = loads_pasted_info(save_filename)
+  File "parse_page.py", line 64, in loads_pasted_info
+    with open(filename, 'r', encoding='utf-8') as f:
+IOError: [Errno 2] No such file or directory: 'data/update_content.txt'
+Traceback (most recent call last):
+  File "parse_page.py", line 98, in <module>
+    pasted_info = loads_pasted_info(save_filename)
+  File "parse_page.py", line 64, in loads_pasted_info
+    with open(filename, 'r', encoding='utf-8') as f:
+IOError: [Errno 2] No such file or directory: 'data/update_content.txt'
+Traceback (most recent call last):
+  File "parse_page.py", line 98, in <module>
+    pasted_info = loads_pasted_info(save_filename)
+  File "parse_page.py", line 64, in loads_pasted_info
+    with open(filename, 'r', encoding='utf-8') as f:
+IOError: [Errno 2] No such file or directory: 'data/update_content.txt'
+Traceback (most recent call last):
+  File "parse_page.py", line 98, in <module>
+    pasted_info = loads_pasted_info(save_filename)
+  File "parse_page.py", line 64, in loads_pasted_info
+    with open(filename, 'r', encoding='utf-8') as f:
+IOError: [Errno 2] No such file or directory: 'data/update_content.txt'
+Traceback (most recent call last):
+  File "parse_page.py", line 98, in <module>
+    pasted_info = loads_pasted_info(save_filename)
+  File "parse_page.py", line 64, in loads_pasted_info
+    with open(filename, 'r', encoding='utf-8') as f:
+IOError: [Errno 2] No such file or directory: 'data/update_content.txt'
+Traceback (most recent call last):
+  File "parse_page.py", line 98, in <module>
+    pasted_info = loads_pasted_info(save_filename)
+  File "parse_page.py", line 64, in loads_pasted_info
+    with open(filename, 'r', encoding='utf-8') as f:
+IOError: [Errno 2] No such file or directory: 'data/update_content.txt'
+Traceback (most recent call last):
+  File "parse_page.py", line 98, in <module>
+    pasted_info = loads_pasted_info(save_filename)
+  File "parse_page.py", line 64, in loads_pasted_info
+    with open(filename, 'r', encoding='utf-8') as f:
+IOError: [Errno 2] No such file or directory: 'data/update_content.txt'
+Traceback (most recent call last):
+  File "parse_page.py", line 98, in <module>
+    pasted_info = loads_pasted_info(save_filename)
+  File "parse_page.py", line 64, in loads_pasted_info
+    with open(filename, 'r', encoding='utf-8') as f:
+IOError: [Errno 2] No such file or directory: 'data/update_content.txt'
+Traceback (most recent call last):
+  File "parse_page.py", line 98, in <module>
+    pasted_info = loads_pasted_info(save_filename)
+  File "parse_page.py", line 64, in loads_pasted_info
+    with open(filename, 'r', encoding='utf-8') as f:
+IOError: [Errno 2] No such file or directory: 'data/update_content.txt'
+Traceback (most recent call last):
+  File "parse_page.py", line 98, in <module>
+    pasted_info = loads_pasted_info(save_filename)
+  File "parse_page.py", line 64, in loads_pasted_info
+    with open(filename, 'r', encoding='utf-8') as f:
+IOError: [Errno 2] No such file or directory: 'data/update_content.txt'
+Traceback (most recent call last):
+  File "parse_page.py", line 98, in <module>
+    pasted_info = loads_pasted_info(save_filename)
+  File "parse_page.py", line 64, in loads_pasted_info
+    with open(filename, 'r', encoding='utf-8') as f:
+IOError: [Errno 2] No such file or directory: 'data/update_content.txt'
