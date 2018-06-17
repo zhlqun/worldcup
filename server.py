@@ -59,9 +59,9 @@ def worldcupDetail():
             elif line[4] == "2" or line[4] == 2:
                 ret_str += """<p><font size="6" color="blue">%s | %s | %s %s</font></p>""" % (line[0], context[1], line[3], line[2])
             elif line[4] == "4" or line[4] == 4:
-                ret_str += """<p><font size="7" color="red">%s | %s | %s %s</font></p>""" % (line[0], context[1], line[3], line[2])
+                ret_str += """<p><font size="6" color="red">%s | %s | %s %s</font></p>""" % (line[0], context[1], line[3], line[2])
             else:
-                ret_str += """<p><font size="7" color="black">%s | %s | %s %s</font></p>""" % (line[0], context[1], line[3], line[2])
+                ret_str += """<p><font size="6" color="black">%s | %s | %s %s</font></p>""" % (line[0], context[1], line[3], line[2])
         elif context[0] == "url":
             ret_str += """<div><a href=""><img src="%s" tyle="margin: 0 auto;" width="800" height="600" border="0"></a></div>""" % (context[1])
         i += 1
