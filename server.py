@@ -43,7 +43,7 @@ def worldcupDetail():
 
     i = 0
     last_score = ""
-    for line in open("/home/work/public/show_detail_server/sina_dynamic/data/worldcupDetail", "r"):
+    for line in open("sina_dynamic/data/worldcupDetail", "r"):
         line = line.strip().split("\t")
         if len(line) != 4:
             continue
@@ -61,6 +61,6 @@ def worldcupDetail():
     return ret_str
 
 if __name__ == '__main__':
-    app.debug = True
+    app.debug = False
     app.run(host='0.0.0.0', port=8002)
 
