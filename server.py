@@ -29,6 +29,8 @@ def worldcupDetail():
     
     <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
     
+    <meta http-equiv="refresh" content="12; url=http://39.105.49.216:8002/worldcupDetail" />    
+    
     <title>群哥撸球直播</title>
     
     </head>
