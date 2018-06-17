@@ -87,6 +87,7 @@ def displayer_info(page_info_list, displayer_filename, save_filename, key_dic):
             score = info.get('match', {}).get('score1', '') + u'-' + info.get('match', {}).get('score2', '')
             room_id = info.get('room_id', 0)
             time_now = info.get('mtime', 0)
+            color = info.get('color', '1')
             key = ""
             for item in key_dic:
                 if int(time_now) > key_dic[item][0] - 600 and int(time_now) < key_dic[item][0] + 3600 * 2.5:
@@ -98,13 +99,13 @@ def displayer_info(page_info_list, displayer_filename, save_filename, key_dic):
                         if u'权威' not in text \
                             and u'足彩' not in text \
                             and u'小炮' not in text:
-                            f.write(pub_time + '\t' + text + '\t' + score + '\t' + key + '\n')
+                            f.write(pub_time + '\t' + text + '\t' + score + '\t' + key + '\t' + color + '\n')
                     if 'gif' in info:
                         gif = 'url\001' + info.get('gif')
-                        f.write(pub_time + '\t' + gif + '\t' + score + '\t' + key + '\n')
+                        f.write(pub_time + '\t' + gif + '\t' + score + '\t' + key + '\t' + color + '\n')
                     if 'pic' in info:
                         pic = 'url\001' + info.get('pic')
-                        f.write(pub_time + '\t' + pic + '\t' + score + '\t' + key + '\n')
+                        f.write(pub_time + '\t' + pic + '\t' + score + '\t' + key + '\t' + color + '\n')
     # 存储数据
     with open(save_filename, 'w', encoding='utf-8') as f:
         for info in page_info_list:
