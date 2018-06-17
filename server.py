@@ -29,7 +29,7 @@ def worldcupDetail():
     
     <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
     
-    <title>小度聊球实时精彩细节demo</title>
+    <title>群哥撸球直播</title>
     
     </head>
     
