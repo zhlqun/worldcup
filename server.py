@@ -29,7 +29,7 @@ def worldcupDetail():
     
     <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
 
-    <meta http-equiv="refresh" content="4; url=http://cp01-nlp-zhlqun.epc.baidu.com:8002/worldcupDetail" /> 
+    <meta http-equiv="refresh" content="4; url=http://45.32.229.151:8002/worldcupDetail" /> 
 
     <title>小度聊球实时精彩细节demo</title>
     
@@ -45,7 +45,7 @@ def worldcupDetail():
 
     i = 0
     last_score = ""
-    for line in open("/home/work/public/show_detail_server/sina_dynamic/data/worldcupDetail", "r"):
+    for line in open("sina_dynamic/data/worldcupDetail", "r"):
         line = line.strip().split("\t")
         if len(line) != 5:
             continue
@@ -73,5 +73,5 @@ def worldcupDetail():
 
 if __name__ == '__main__':
     app.debug = True
-    app.run(host='0.0.0.0', port=8002)
+    app.run(host='0.0.0.0', port=80)
 
