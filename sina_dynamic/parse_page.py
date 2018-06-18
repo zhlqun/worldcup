@@ -45,7 +45,7 @@ def get_json_data_from_sina(room_id):
             if len(datas) > 1:
                 idx = datas[-1].get("id", '')
             else:
-                break
+                continue
             detele_vals = ['type', 'liver', 'liver_id', 'ctime']
             fp.write(room_id + '  msg:' + status.get('msg') + str(len(datas)) + "\n")
             fp.flush()
@@ -175,5 +175,5 @@ if __name__ == '__main__':
             merge_info_list = merge_info(page_info, pasted_info)
             # 4, 展示数据
             displayer_info(merge_info_list, displayer_filename, save_filename, dic)
-        time.sleep(1)
+        time.sleep(2)
         #break
