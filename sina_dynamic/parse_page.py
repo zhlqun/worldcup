@@ -24,7 +24,16 @@ def get_json_data_from_sina(room_id):
     #url = 'http://rapid.sports.sina.com.cn/live/api/msg/index?room_id=sports%3A201805082&count=10&msg_id=&direct=-1&dpc=1'
     for i in range(20):
         try:
-            page_data = urllib2.urlopen(url).read()
+            user_agent = 'Mozilla/4.0 (compatible; MSIE 5.5; Windows NT)'   
+            values = {'name' : 'Michael Foord',   
+                      'location' : 'pythontab',   
+                      'language' : 'Python' }   
+            headers = { 'User-Agent' : user_agent }   
+            data = urllib.urlencode(values)   
+            req = urllib2.Request(url, data, headers)   
+            response = urllib2.urlopen(req)   
+            page_data = response.read()
+            #page_data = urllib2.urlopen(url).read()
             page_data = json.loads(page_data, encoding="utf-8")
             result = page_data.get('result', {})
             status = result.get('status', {})
