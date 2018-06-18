@@ -23,7 +23,7 @@ def get_json_data_from_sina(room_id):
     page_info = {}
     url = 'http://rapid.sports.sina.com.cn/live/api/msg/index?room_id=' + room_id + '&count=100&msg_id=&direct=-1'
     #url = 'http://rapid.sports.sina.com.cn/live/api/msg/index?room_id=sports%3A201805082&count=10&msg_id=&direct=-1&dpc=1'
-    for i in range(20):
+    for i in range(2):
         try:
             #user_agent = 'Mozilla/4.0 (compatible; MSIE 5.5; Windows NT)'   
             #values = {'name' : 'Michael Foord',   
