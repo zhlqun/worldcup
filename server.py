@@ -1,4 +1,4 @@
-#p!/usr/bin/env python
+#!/usr/bin/env python
 #encoding=utf8
 
 """
@@ -28,10 +28,10 @@ def worldcupDetail():
     <head>
     
     <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-    
-    <meta http-equiv="refresh" content="12; url=http://39.105.49.216:8002/worldcupDetail" />    
-    
-    <title>群哥撸球直播</title>
+
+    <meta http-equiv="refresh" content="4; url=http://cp01-nlp-zhlqun.epc.baidu.com:8002/worldcupDetail" /> 
+
+    <title>小度聊球实时精彩细节demo</title>
     
     </head>
     
@@ -45,7 +45,7 @@ def worldcupDetail():
 
     i = 0
     last_score = ""
-    for line in open("sina_dynamic/data/worldcupDetail", "r"):
+    for line in open("/home/work/public/show_detail_server/sina_dynamic/data/worldcupDetail", "r"):
         line = line.strip().split("\t")
         if len(line) != 5:
             continue
@@ -63,6 +63,8 @@ def worldcupDetail():
             else:
                 ret_str += """<p><font size="6" color="black">%s | %s | %s %s</font></p>""" % (line[0], context[1], line[3], line[2])
         elif context[0] == "url":
+            ret_str += """<div><a href=""><img src="%s" tyle="margin: 0 auto;" width="800" height="600" border="0"></a></div>""" % (context[1])   
+        elif context[0] == "url":
             ret_str += """<div><a href=""><img src="%s" tyle="margin: 0 auto;" width="800" height="600" border="0"></a></div>""" % (context[1])
         i += 1
         if i > 400:
@@ -70,6 +72,6 @@ def worldcupDetail():
     return ret_str
 
 if __name__ == '__main__':
-    app.debug = False
+    app.debug = True
     app.run(host='0.0.0.0', port=8002)
 
