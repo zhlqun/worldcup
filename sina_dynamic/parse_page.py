@@ -159,7 +159,7 @@ if __name__ == '__main__':
         room_id = 0
         for key in dic:
             timestamp = int(dic[key][0])
-            if (int(time_now) > int(timestamp) - 1200 and int(time_now) < int(timestamp) + 2.5 * 3600):
+            if (int(time_now) > int(timestamp) - 3600 and int(time_now) < int(timestamp) + 2.5 * 3600):
                 room_id = key
                 print room_id
             else:
