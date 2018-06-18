@@ -29,9 +29,9 @@ def worldcupDetail():
     
     <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
 
-    <meta http-equiv="refresh" content="4; url=http://45.32.229.151:8002/worldcupDetail" /> 
+    <meta http-equiv="refresh" content="10; url=http://45.32.229.151/worldcupDetail" /> 
 
-    <title>小度聊球实时精彩细节demo</title>
+    <title>群哥撸球直播demo</title>
     
     </head>
     
