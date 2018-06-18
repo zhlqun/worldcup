@@ -40,6 +40,7 @@ def get_json_data_from_sina(room_id):
             datas = result.get('data', [])
             idx = ''
             print room_id, len(datas), status, len(datas)
+            sys.stdout.flush()
             if len(datas) > 1:
                 idx = datas[-1].get("id", '')
             else:
