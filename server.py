@@ -63,9 +63,7 @@ def worldcupDetail():
             else:
                 ret_str += """<p><font size="6" color="black">%s | %s | %s %s</font></p>""" % (line[0], context[1], line[3], line[2])
         elif context[0] == "url":
-            ret_str += """<div><a href=""><img src="%s" tyle="margin: 0 auto;" width="800" height="600" border="0"></a></div>""" % (context[1])   
-        elif context[0] == "url":
-            ret_str += """<div><a href=""><img src="%s" tyle="margin: 0 auto;" width="800" height="600" border="0"></a></div>""" % (context[1])
+            ret_str += """<div><a href=""><img src="%s" style="margin: 0 auto;" width="800" height="600" border="0"></a></div>""" % (context[1])   
         i += 1
         if i > 400:
             break
