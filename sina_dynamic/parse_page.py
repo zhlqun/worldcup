@@ -156,15 +156,17 @@ if __name__ == '__main__':
     displayer_filename = 'data/worldcupDetail'
     while True:
         time_now = time.time()
-        room_id = 0
+        room_ids = list()
         for key in dic:
+            date = util.timestamp2string(time_now)
             timestamp = int(dic[key][0])
             if (int(time_now) > int(timestamp) - 3600 and int(time_now) < int(timestamp) + 2.5 * 3600):
                 room_id = key
-                print room_id
+                room_ids.append(room_id)
+                print date + room_id
             else:
                 continue
-        if room_id != 0:
+        for room_id in room_ids: 
             date = util.timestamp2string(time_now)
             save_filename = 'data/update_content.txt'
             # 1, 导入旧数据
