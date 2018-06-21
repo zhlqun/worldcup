@@ -9,6 +9,7 @@ import util
 import time
 import urllib
 import urllib2
+import socket
 
 fp = open("log", "a")
 
@@ -58,8 +59,11 @@ def get_json_data_from_sina(room_id):
                 pub_time = info['pub_time']
                 page_info[pub_time] = info
             url = 'http://rapid.sports.sina.com.cn/live/api/msg/index?room_id=' + room_id + '&count=100&msg_id=' + idx + '&direct=-1'
-        except:
-            pass
+        except urllib2.URLError, e:
+            if isinstance(e.reason, socket.timeout):
+                pass 
+            else:
+                pass
     return page_info
 
 
@@ -170,4 +174,4 @@ if __name__ == '__main__':
         print date + " okay"
         sys.stdout.flush()
         #break
-        time.sleep(2)
+        time.sleep(5)
