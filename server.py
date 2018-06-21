@@ -31,7 +31,7 @@ def worldcupDetail():
 
     <meta http-equiv="refresh" content="10; url=http://45.32.229.151/worldcupDetail" /> 
 
-    <title>群哥撸球直播demo</title>
+    <title>小度聊球直播</title>
     
     </head>
     

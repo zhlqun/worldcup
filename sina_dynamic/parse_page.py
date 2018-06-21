@@ -24,7 +24,7 @@ def get_json_data_from_sina(room_id):
     url = 'http://rapid.sports.sina.com.cn/live/api/msg/index?room_id=' + room_id + '&count=100&msg_id=&direct=-1'
     #url = 'http://rapid.sports.sina.com.cn/live/api/msg/index?room_id=sports%3A201805082&count=10&msg_id=&direct=-1&dpc=1'
     for i in range(2):
-        try:
+        #try:
             #user_agent = 'Mozilla/4.0 (compatible; MSIE 5.5; Windows NT)'   
             #values = {'name' : 'Michael Foord',   
             #          'location' : 'pythontab',   
@@ -34,7 +34,7 @@ def get_json_data_from_sina(room_id):
             #req = urllib2.Request(url, data, headers)   
             #response = urllib2.urlopen(req)   
             #page_data = response.read()
-            page_data = urllib2.urlopen(url).read()
+            page_data = urllib2.urlopen(url, timeout = 2).read()
             page_data = json.loads(page_data, encoding="utf-8")
             result = page_data.get('result', {})
             status = result.get('status', {})
@@ -42,10 +42,8 @@ def get_json_data_from_sina(room_id):
             idx = ''
             print room_id, len(datas), status, len(datas)
             sys.stdout.flush()
-            if len(datas) > 1:
+            if len(datas) > 0:
                 idx = datas[-1].get("id", '')
-            else:
-                continue
             detele_vals = ['type', 'liver', 'liver_id', 'ctime']
             fp.write(room_id + '  msg:' + status.get('msg') + str(len(datas)) + "\n")
             fp.flush()
@@ -66,8 +64,8 @@ def get_json_data_from_sina(room_id):
                 pub_time = info['pub_time']
                 page_info[pub_time] = info
             url = 'http://rapid.sports.sina.com.cn/live/api/msg/index?room_id=' + room_id + '&count=100&msg_id=' + idx + '&direct=-1'
-        except:
-            pass
+        #except:
+        #    pass
     return page_info
 
 
@@ -96,8 +94,8 @@ def loads_pasted_info(filename):
 def displayer_info(page_info_list, displayer_filename, save_filename, key_dic):
     with open(displayer_filename, 'w', encoding='utf-8') as f:
         for info in page_info_list:
-            pub_time = info.get('pub_time')
-            pub_time = util.timestamp2string(float(pub_time))
+            pub_time_raw = info.get('pub_time')
+            pub_time = util.timestamp2string(float(pub_time_raw))
             score = info.get('match', {}).get('score1', '') + u'-' + info.get('match', {}).get('score2', '')
             room_id = info.get('room_id', 0)
             time_now = info.get('mtime', 0)
@@ -111,13 +109,13 @@ def displayer_info(page_info_list, displayer_filename, save_filename, key_dic):
                         and u'足彩' not in text \
                         and u'购彩' not in text \
                         and u'小炮' not in text:
-                        f.write(pub_time + '\t' + text + '\t' + score + '\t' + key + '\t' + color + '\n')
+                        f.write(pub_time + '\t' + text + '\t' + score + '\t' + key + '\t' + color + '\t' + pub_time_raw + '\n')
                 if 'gif' in info:
                     gif = 'url\001' + info.get('gif')
-                    f.write(pub_time + '\t' + gif + '\t' + score + '\t' + key + '\t' + color + '\n')
+                    f.write(pub_time + '\t' + gif + '\t' + score + '\t' + key + '\t' + color + '\t' + pub_time_raw + '\n')
                 if 'pic' in info:
                     pic = 'url\001' + info.get('pic')
-                    f.write(pub_time + '\t' + pic + '\t' + score + '\t' + key + '\t' + color + '\n')
+                    f.write(pub_time + '\t' + pic + '\t' + score + '\t' + key + '\t' + color + '\t' + pub_time_raw + '\n')
     # 存储数据
     with open(save_filename, 'w', encoding='utf-8') as f:
         for info in page_info_list:
@@ -160,12 +158,10 @@ if __name__ == '__main__':
         for key in dic:
             date = util.timestamp2string(time_now)
             timestamp = int(dic[key][0])
-            if (int(time_now) > int(timestamp) - 3600 and int(time_now) < int(timestamp) + 2.5 * 3600):
+            if (int(time_now) > int(timestamp) - 4 * 3600 and int(time_now) < int(timestamp) + 2.5 * 3600):
                 room_id = key
                 room_ids.append(room_id)
                 print date + room_id
-            else:
-                continue
         for room_id in room_ids: 
             date = util.timestamp2string(time_now)
             save_filename = 'data/update_content.txt'
@@ -178,4 +174,5 @@ if __name__ == '__main__':
             # 4, 展示数据
             displayer_info(merge_info_list, displayer_filename, save_filename, dic)
         time.sleep(2)
-        #break
+        print date + " okay"
+        sys.stdout.flush()
