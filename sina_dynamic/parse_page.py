@@ -158,10 +158,10 @@ if __name__ == '__main__':
         for key in dic:
             date = util.timestamp2string(time_now)
             timestamp = int(dic[key][0])
-            if (int(time_now) > int(timestamp) - 4 * 3600 and int(time_now) < int(timestamp) + 2.5 * 3600):
+            if (int(time_now) > int(timestamp) - 3600 and int(time_now) < int(timestamp) + 2.5 * 3600):
                 room_id = key
                 room_ids.append(room_id)
-                print date + room_id
+                print date + " " + room_id
         for room_id in room_ids: 
             date = util.timestamp2string(time_now)
             save_filename = 'data/update_content.txt'
@@ -173,6 +173,7 @@ if __name__ == '__main__':
             merge_info_list = merge_info(page_info, pasted_info)
             # 4, 展示数据
             displayer_info(merge_info_list, displayer_filename, save_filename, dic)
-        time.sleep(2)
         print date + " okay"
         sys.stdout.flush()
+        #break
+        time.sleep(2)
