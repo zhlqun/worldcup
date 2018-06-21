@@ -152,7 +152,7 @@ if __name__ == '__main__':
         for key in dic:
             date = util.timestamp2string(time_now)
             timestamp = int(dic[key][0])
-            if (int(time_now) > int(timestamp) - 3600 and int(time_now) < int(timestamp) + 2.5 * 36000):
+            if (int(time_now) > int(timestamp) - 3600 and int(time_now) < int(timestamp) + 2.5 * 3600):
                 room_id = key
                 room_ids.append(room_id)
                 print date + " " + room_id
