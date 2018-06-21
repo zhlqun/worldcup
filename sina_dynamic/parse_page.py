@@ -18,7 +18,7 @@ def get_json_data_from_sina(room_id):
     url = 'http://rapid.sports.sina.com.cn/live/api/msg/index?room_id=' + room_id + '&count=100&msg_id=&direct=-1'
     #url = 'http://rapid.sports.sina.com.cn/live/api/msg/index?room_id=sports%3A201805082&count=10&msg_id=&direct=-1&dpc=1'
     for i in range(2):
-        #try:
+        try:
             #user_agent = 'Mozilla/4.0 (compatible; MSIE 5.5; Windows NT)'   
             #values = {'name' : 'Michael Foord',   
             #          'location' : 'pythontab',   
@@ -58,8 +58,8 @@ def get_json_data_from_sina(room_id):
                 pub_time = info['pub_time']
                 page_info[pub_time] = info
             url = 'http://rapid.sports.sina.com.cn/live/api/msg/index?room_id=' + room_id + '&count=100&msg_id=' + idx + '&direct=-1'
-        #except:
-        #    pass
+        except:
+            pass
     return page_info
 
 
@@ -152,7 +152,7 @@ if __name__ == '__main__':
         for key in dic:
             date = util.timestamp2string(time_now)
             timestamp = int(dic[key][0])
-            if (int(time_now) > int(timestamp) - 3600 and int(time_now) < int(timestamp) + 2.5 * 3600):
+            if (int(time_now) > int(timestamp) - 3600 and int(time_now) < int(timestamp) + 2.5 * 36000):
                 room_id = key
                 room_ids.append(room_id)
                 print date + " " + room_id
