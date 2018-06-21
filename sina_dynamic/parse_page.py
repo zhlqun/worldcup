@@ -1,12 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-##########################################################
-# File Name: parse_page.py
-# Author: laijiawei, Baidu Inc.
-# Mail: laijiawei@baidu.com
-# Created Time: 2018-06-15 17:00:02
-################################################
-#================================================
+
 import os
 import sys
 import json
