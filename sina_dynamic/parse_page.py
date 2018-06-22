@@ -153,6 +153,7 @@ if __name__ == '__main__':
     while True:
         time_now = time.time()
         room_ids = list()
+        date = util.timestamp2string(time_now)
         for key in dic:
             date = util.timestamp2string(time_now)
             timestamp = int(dic[key][0])
@@ -161,16 +162,19 @@ if __name__ == '__main__':
                 room_ids.append(room_id)
                 print date + " " + room_id
         for room_id in room_ids: 
-            date = util.timestamp2string(time_now)
-            save_filename = 'data/update_content.txt'
-            # 1, 导入旧数据
-            pasted_info = loads_pasted_info(save_filename)
-            # 2, 请求新浪新数据
-            page_info = get_json_data_from_sina(room_id)
-            # 3, 合并新旧数据
-            merge_info_list = merge_info(page_info, pasted_info)
-            # 4, 展示数据
-            displayer_info(merge_info_list, displayer_filename, save_filename, dic)
+            try:
+                date = util.timestamp2string(time_now)
+                save_filename = 'data/update_content.txt'
+                # 1, 导入旧数据
+                pasted_info = loads_pasted_info(save_filename)
+                # 2, 请求新浪新数据
+                page_info = get_json_data_from_sina(room_id)
+                # 3, 合并新旧数据
+                merge_info_list = merge_info(page_info, pasted_info)
+                # 4, 展示数据
+                displayer_info(merge_info_list, displayer_filename, save_filename, dic)
+            except:
+                pass
         print date + " okay"
         sys.stdout.flush()
         #break
